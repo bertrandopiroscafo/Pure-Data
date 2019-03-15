@@ -1,0 +1,92 @@
+#N canvas 218 63 796 616 10;
+#X floatatom 581 241 5 0 0 0 - - -, f 5;
+#X obj 581 263 v dt;
+#X obj 258 567 dac~;
+#X obj 584 188 hsl 128 35 0.006 0.03 0 0 empty empty empty -2 -8 0
+10 -261234 -1 -1 2117 1;
+#X msg 276 155 2.66667;
+#X msg 581 145 0.01;
+#X obj 260 49 loadbang;
+#X obj 254 321 bng 15 250 50 0 empty empty empty 17 7 0 10 -204800
+-1 -1;
+#X obj 125 188 hsl 128 35 0 20 0 0 empty empty empty -2 -8 0 10 -261234
+-1 -1 6350 1;
+#X obj 279 187 hsl 128 35 0 5 0 0 empty empty empty -2 -8 0 10 -261234
+-1 -1 6773 1;
+#X obj 432 187 hsl 128 35 0 30 0 0 empty empty empty -2 -8 0 10 -261234
+-1 -1 11853 1;
+#X floatatom 122 232 5 0 0 0 - - -, f 5;
+#X floatatom 276 231 5 0 0 0 - - -, f 5;
+#X floatatom 430 234 5 0 0 0 - - -, f 5;
+#X msg 254 355 set 1 1 1;
+#X obj 122 254 v sigma;
+#X obj 276 254 v beta;
+#X obj 430 257 v rho;
+#X msg 122 154 10;
+#X msg 429 149 28;
+#X obj 254 381 fexpr~ $y1 + sigma * ($y2 -$y1) * dt \; $y2 + (-$y1
+* $y3 + rho * $y1 - $y2) * dt \; $y3 + ($y1 * $y2 - beta * $y3) * dt
+;
+#X text 257 425 x(t);
+#X text 403 425 y(t);
+#X text 345 356 Solving the Lorenz differential equations;
+#X obj 254 499 *~;
+#X obj 275 463 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 -262130
+-1 -1 3150 1;
+#X obj 400 500 *~;
+#X obj 421 462 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 -262130
+-1 -1 3150 1;
+#X floatatom 272 481 5 0 0 0 - - -, f 5;
+#X floatatom 418 481 5 0 0 0 - - -, f 5;
+#X obj 272 442 r l;
+#X obj 418 440 r r;
+#X obj 260 81 t b b b b b;
+#X msg 42 154 0.5;
+#X obj 12 184 s l;
+#X obj 54 184 s r;
+#X obj 224 461 /~ 25;
+#X obj 370 462 /~ 25;
+#X text 365 22 Written by @bertrandopiroscafo March 2019 Search "Lorentz
+Attractor" on the web for more information. Read Shahrokh Yadegari
+papers on Expr \, Expr~ \, Fexpr~ for more explanation about fexpr~
+;
+#X text 303 568 Chaotic Sound;
+#X obj 218 47 bng 15 250 50 0 empty empty empty 17 7 0 10 -232576 -1
+-1;
+#X connect 0 0 1 0;
+#X connect 3 0 0 0;
+#X connect 4 0 9 0;
+#X connect 5 0 3 0;
+#X connect 6 0 32 0;
+#X connect 7 0 14 0;
+#X connect 8 0 11 0;
+#X connect 9 0 12 0;
+#X connect 10 0 13 0;
+#X connect 11 0 15 0;
+#X connect 12 0 16 0;
+#X connect 13 0 17 0;
+#X connect 14 0 20 0;
+#X connect 18 0 8 0;
+#X connect 19 0 10 0;
+#X connect 20 0 36 0;
+#X connect 20 1 37 0;
+#X connect 24 0 2 0;
+#X connect 24 0 2 1;
+#X connect 25 0 28 0;
+#X connect 26 0 2 0;
+#X connect 26 0 2 1;
+#X connect 27 0 29 0;
+#X connect 28 0 24 1;
+#X connect 29 0 26 1;
+#X connect 30 0 25 0;
+#X connect 31 0 27 0;
+#X connect 32 0 33 0;
+#X connect 32 1 18 0;
+#X connect 32 2 4 0;
+#X connect 32 3 19 0;
+#X connect 32 4 5 0;
+#X connect 33 0 34 0;
+#X connect 33 0 35 0;
+#X connect 36 0 24 0;
+#X connect 37 0 26 0;
+#X connect 40 0 32 0;
